@@ -1,0 +1,53 @@
+---
+title: "spatialdv-vignette"
+author: "Flávio Mota"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{spatialdv-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Introduction
+*spatialdv* is a package created to calculate diversity patterns for spatial data.
+
+## Creating a random dataset to test the package
+```{r}
+library(terra)
+library(spatialdv)
+
+# creating the SpatRaster objects for reference and future scenarios
+set.seed(100)
+ref <- rast(array(sample(c(rep(1, 750), rep(0, 250))), dim = c(10, 10, 10)))
+ref
+
+fut <- rast(array(sample(c(rep(1, 300), rep(0, 700))), dim = c(10, 10, 10)))
+fut
+```
+
+## Calculating alpha diversity
+```{r}
+# alpha diversity for reference scenario
+spatialdv(ref, fut, "alpha1")
+
+# alpha diversity for future scenario
+spatialdv(ref, fut, "alpha2")
+
+# difference between future and reference scenarios
+spatialdv(ref, fut, "delta")
+```
+
+## Calculating beta diversity
+```{r}
+# total beta diversity between scenarios
+spatialdv(ref, fut, "beta")
+
+# turnover component
+spatialdv(ref, fut, "turn")
+
+# nestedness component
+spatialdv(ref, fut, "nest")
+
+# ratio (turnover/total beta diversity)
+spatialdv(ref, fut, "ratio")
+```

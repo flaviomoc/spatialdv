@@ -12,6 +12,8 @@ License added
 
 Description updated
 
+Vignette added
+
 ## Installation
 
 You can install the development version of spatialdv from [GitHub](https://github.com/) with:
