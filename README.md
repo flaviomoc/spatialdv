@@ -6,14 +6,6 @@
 
 The goal of spatialdv is to calculate diversity patterns for spatial data
 
-Function added and documented
-
-License added
-
-Description updated
-
-Vignette added
-
 ## Installation
 
 You can install the development version of spatialdv from [GitHub](https://github.com/) with:
@@ -30,5 +22,10 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(spatialdv)
 ## basic example code
+require(terra)
+set.seed(100)
+ref <- rast(array(sample(c(rep(1, 750), rep(0, 250))), dim = c(10, 10, 10)))
+fut <- rast(array(sample(c(rep(1, 300), rep(0, 700))), dim = c(10, 10, 10)))
+spatialdv(ref, fut, "beta")
 ```
 
