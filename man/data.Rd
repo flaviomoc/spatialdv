@@ -5,7 +5,7 @@
 \alias{data}
 \title{SpatRaster objects}
 \format{
-SpatRaster creating from random array. 10 cols, 10 rows, and 10 layers
+SpatRaster created from random array. 10 cols, 10 rows, and 10 layers
 }
 \source{
 Random values

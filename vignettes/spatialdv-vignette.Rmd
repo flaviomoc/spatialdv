@@ -26,7 +26,7 @@ fut
 ```
 
 ## Calculating alpha diversity
-```{r}
+```{r, fig.height = 5, fig.width = 5, fig.align = 'center',}
 # alpha diversity for reference scenario
 spatialdv(ref, fut, "alpha1")
 
@@ -38,7 +38,7 @@ spatialdv(ref, fut, "delta")
 ```
 
 ## Calculating beta diversity
-```{r}
+```{r, fig.height = 5, fig.width = 5, fig.align = 'center',}
 # total beta diversity between scenarios
 spatialdv(ref, fut, "beta")
 
