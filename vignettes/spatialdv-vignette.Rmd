@@ -11,12 +11,12 @@ vignette: >
 ## Introduction
 *spatialdv* is a package created to calculate diversity patterns for spatial data.
 
-## Creating a random dataset to test the package
+## Creating random data to test the package
 ```{r}
 library(terra)
 library(spatialdv)
 
-# creating the SpatRaster objects for reference and future scenarios
+# creating SpatRaster objects for reference and future scenarios
 set.seed(100)
 ref <- rast(array(sample(c(rep(1, 750), rep(0, 250))), dim = c(10, 10, 10)))
 ref
