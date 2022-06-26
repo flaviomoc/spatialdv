@@ -10,10 +10,9 @@
 #' @export
 #'
 #' @examples
-#' require(terra)
 #' set.seed(100)
-#' ref <- rast(array(sample(c(rep(1, 750), rep(0, 250))), dim = c(10, 10, 10)))
-#' fut <- rast(array(sample(c(rep(1, 300), rep(0, 700))), dim = c(10, 10, 10)))
+#' ref <- terra::rast(array(sample(c(rep(1, 750), rep(0, 250))), dim = c(10, 10, 10)))
+#' fut <- terra::rast(array(sample(c(rep(1, 300), rep(0, 700))), dim = c(10, 10, 10)))
 #' spatialdv(ref, fut, "beta")
 #'
 spatialdv <- function(x, y, z = "delta"){
