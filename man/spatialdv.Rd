@@ -20,10 +20,9 @@ Plot object of class SpatRaster according to the index chosen
 Calculate alpha and beta diversity for spatial data
 }
 \examples{
-require(terra)
 set.seed(100)
-ref <- rast(array(sample(c(rep(1, 750), rep(0, 250))), dim = c(10, 10, 10)))
-fut <- rast(array(sample(c(rep(1, 300), rep(0, 700))), dim = c(10, 10, 10)))
+ref <- terra::rast(array(sample(c(rep(1, 750), rep(0, 250))), dim = c(10, 10, 10)))
+fut <- terra::rast(array(sample(c(rep(1, 300), rep(0, 700))), dim = c(10, 10, 10)))
 spatialdv(ref, fut, "beta")
 
 }
