@@ -46,7 +46,7 @@ spatialdv(ref, fut, "delta")
 ```
 
 ## Calculating beta diversity
-It is a spatial representation of *species composition* change between two scenarios. It indicates the differentiation in communities from the reference scenario to the future scenario by cell. Higher values of *beta diversity* means higher changes, which can be by species replacement, *turnover*, or species gain/loss, *nestedness*. The *ratio* is calculated dividing turnover by *total beta diversity* thus values close to 1 indicates predominance of *turnover* component while values close to 0 indicates predominance of *nestedness* component.
+It is a spatial representation of *species composition* change between two scenarios. It indicates the differentiation in communities from the reference scenario to the future scenario by cell. Higher values of *beta diversity* means higher changes, which can be by species replacement, *turnover*, or species gain/loss, *nestedness*. The *ratio* is calculated dividing the *turnover* by the *total beta diversity* thus values close to 1 indicates predominance of *turnover* component while values close to 0 indicates predominance of *nestedness* component.
 ```{r, fig.height = 5, fig.width = 5, fig.align = 'center',}
 # total beta diversity between scenarios
 spatialdv(ref, fut, "beta")
