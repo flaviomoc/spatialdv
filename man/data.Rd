@@ -3,9 +3,9 @@
 \docType{data}
 \name{data}
 \alias{data}
-\title{SpatRaster objects}
+\title{SpatRaster and data.frame objects}
 \format{
-SpatRaster created from random array. 10 cols, 10 rows, and 10 layers
+SpatRaster: 10 columns, 10 rows, and 10 layers. Data.frame: 2 columns and 10 rows.
 }
 \source{
 Random values
@@ -14,6 +14,8 @@ Random values
 data
 }
 \description{
-Random dataset containing binary maps of 10 species for reference and future scenarios
+\emph{ref.tif} is an object of class SpatRaster created from a random array representing binary maps of 10 species in the reference scenario.
+\emph{fut.tif} is an object of class SpatRaster created from a random array representing binary maps of 10 species in the future scenario.
+\emph{traits.xlsx} is an object of class data.frame created from random vectors representing species traits: body mass and elevation.
 }
 \keyword{datasets}
