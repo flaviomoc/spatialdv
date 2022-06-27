@@ -1,16 +1,16 @@
 test_that("Test that spatialdv function works", {
 
   # load data
-  ref <- terra::rast(system.file("extdata", "ref.tif", package="spatialdv"))
-  fut <- terra::rast(system.file("extdata", "fut.tif", package="spatialdv"))
+  ref <- terra::rast(system.file("extdata", "ref.tif", package = "spatialdv"))
+  fut <- terra::rast(system.file("extdata", "fut.tif", package = "spatialdv"))
 
   # custom_test
   expect_custom1 <- function(obj) {
-    r <- ifelse(obj$lonlat=="TRUE" & obj$values=="TRUE", "TRUE", "FALSE")
+    r <- ifelse(obj$lonlat == "TRUE" & obj$values == "TRUE", "TRUE", "FALSE")
     return(r)
   }
   expect_custom2 <- function(obj) {
-    r <- ifelse(sum(obj$range)!=0, "TRUE", "FALSE")
+    r <- ifelse(sum(obj$range) != 0, "TRUE", "FALSE")
     return(r)
   }
 

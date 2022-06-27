@@ -12,6 +12,7 @@ RoxygenNote: 7.2.0
 URL: https://github.com/flaviomoc/spatialdv
 BugReports: https://github.com/flaviomoc/spatialdv/issues
 Imports: 
+    readxl,
     terra
 Suggests: 
     knitr,

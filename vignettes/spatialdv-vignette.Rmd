@@ -23,6 +23,13 @@ ref
 
 fut <- rast(array(sample(c(rep(1, 300), rep(0, 700))), dim = c(10, 10, 10)))
 fut
+
+# creating data.frame object with species traits
+mass <- runif(10, .5, 2)
+elev <- sample(500:1000, 10)
+traits <- as.data.frame(cbind(mass, elev))
+rownames(traits) <- paste0("sp", 1:nrow(traits))
+traits
 ```
 
 ## Calculating alpha diversity
@@ -50,4 +57,13 @@ spatialdv(ref, fut, "nest")
 
 # ratio (turnover/total beta diversity)
 spatialdv(ref, fut, "ratio")
+```
+
+## Calculating trait generalization
+```{r, fig.height = 5, fig.width = 5, fig.align = 'center',}
+# body mass ecological generalization
+spatialgn(ref, traits, "mass")
+
+# elevation ecological generalization
+spatialgn(ref, traits, "elev")
 ```
