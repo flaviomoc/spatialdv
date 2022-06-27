@@ -9,7 +9,7 @@ vignette: >
 ---
 
 ## Introduction
-*spatialdv* is a package created to calculate diversity patterns for spatial data.
+*spatialdv* is a package created to calculate diversity patterns for spatial data. Is also has an additional function called *spatialgn* to calculate the ecological generalization of species traits.
 
 ## Creating random data to test the package
 ```{r}
@@ -33,6 +33,7 @@ traits
 ```
 
 ## Calculating alpha diversity
+It is a spatial representation of *species richness* of a given scenario calculated by the sum of the same cell of each species.
 ```{r, fig.height = 5, fig.width = 5, fig.align = 'center',}
 # alpha diversity for reference scenario
 spatialdv(ref, fut, "alpha1")
@@ -45,6 +46,7 @@ spatialdv(ref, fut, "delta")
 ```
 
 ## Calculating beta diversity
+It is a spatial representation of *species composition* change between two scenarios. It indicates the differentiation in communities from the reference scenario to the future scenario by cell. Higher values of *beta diversity* means higher changes, which can be by species replacement, *turnover*, or species gain/loss, *nestedness*. The *ratio* is calculated dividing turnover by *total beta diversity* thus values close to 1 indicates predominance of *turnover* component while values close to 0 indicates predominance of *nestedness* component.
 ```{r, fig.height = 5, fig.width = 5, fig.align = 'center',}
 # total beta diversity between scenarios
 spatialdv(ref, fut, "beta")
@@ -60,6 +62,7 @@ spatialdv(ref, fut, "ratio")
 ```
 
 ## Calculating trait generalization
+It is a spatial representation of the *average* of a given trait.
 ```{r, fig.height = 5, fig.width = 5, fig.align = 'center',}
 # body mass ecological generalization
 spatialgn(ref, traits, "mass")
