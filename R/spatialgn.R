@@ -19,8 +19,9 @@
 #'
 spatialgn <- function(x, y, trait) {
   t <- y[ , trait]
+  x[x == 0] <- NA
   gen <- x * t
-  res <- terra::app(gen, mean)
+  res <- terra::app(gen, mean, na.rm = TRUE)
   names(res) <- trait
   return(res)
 }
