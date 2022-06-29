@@ -26,7 +26,7 @@ elev <- sample(500:1000, 10)
 ref <- terra::rast(array(sample(c(rep(1, 750), rep(0, 250))), dim = c(10, 10, 10)))
 traits <- as.data.frame(cbind(mass, elev))
 rownames(traits) <- paste0("sp", 1:nrow(traits))
-spatialgn(ref, traits, "mass")
-spatialgn(ref, traits, "elev")
+res <- spatialgn(ref, traits, "mass")
+terra::plot(res, main = names(res))
 
 }

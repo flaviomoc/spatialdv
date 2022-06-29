@@ -23,6 +23,7 @@ Calculate alpha and beta diversity for spatial data
 set.seed(100)
 ref <- terra::rast(array(sample(c(rep(1, 750), rep(0, 250))), dim = c(10, 10, 10)))
 fut <- terra::rast(array(sample(c(rep(1, 300), rep(0, 700))), dim = c(10, 10, 10)))
-spatialdv(ref, fut, "beta")
+res <- spatialdv(ref, fut, "beta")
+terra::plot(res, main = names(res))
 
 }
