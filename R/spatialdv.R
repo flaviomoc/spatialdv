@@ -13,12 +13,13 @@
 #' set.seed(100)
 #' ref <- terra::rast(array(sample(c(rep(1, 750), rep(0, 250))), dim = c(10, 10, 10)))
 #' fut <- terra::rast(array(sample(c(rep(1, 300), rep(0, 700))), dim = c(10, 10, 10)))
-#' spatialdv(ref, fut, "beta")
+#' res <- spatialdv(ref, fut, "beta")
+#' terra::plot(res, main = names(res))
 #'
 spatialdv <- function(x, y, z = "delta"){
   if(z == "alpha1"){
     res <- sum(x > 0) # richness of reference scenario
-    names(res) <- "Baseline richness"
+    names(res) <- "Reference richness"
   } else if(z == "alpha2"){
     res <- sum(y > 0) # richness of future scenario
     names(res) <- "Future richness"
@@ -57,7 +58,7 @@ spatialdv <- function(x, y, z = "delta"){
     Bjac <- (b + c) / (a + b + c)
     Bjtu <- (2 * min(b, c)) / (a + (2 * min(b, c)))
     res <- Bjtu / Bjac # ratio calculation (turnover divided by beta diversity)
-    names(res) <- "Turnover/Beta total"
+    names(res) <- "Ratio"
   }
-  return(terra::plot(res, main = names(res))) # plot SpatRaster calculated for chosen index
+  return(res) # plot SpatRaster calculated for chosen index
 }

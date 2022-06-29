@@ -36,37 +36,46 @@ traits
 It is a spatial representation of *species richness* of a given scenario calculated by the sum of the same cell of each species.
 ```{r, fig.height = 5, fig.width = 5, fig.align = 'center',}
 # alpha diversity for reference scenario
-spatialdv(ref, fut, "alpha1")
+r.rich <- spatialdv(ref, fut, "alpha1")
+terra::plot(r.rich, main = names(r.rich))
 
 # alpha diversity for future scenario
-spatialdv(ref, fut, "alpha2")
+f.rich <- spatialdv(ref, fut, "alpha2")
+terra::plot(f.rich, main = names(f.rich))
 
 # difference between future and reference scenarios
-spatialdv(ref, fut, "delta")
+d.rich <- spatialdv(ref, fut, "delta")
+terra::plot(d.rich, main = names(d.rich))
 ```
 
 ## Calculating beta diversity
 It is a spatial representation of *species composition* change between two scenarios. It indicates the differentiation in communities from the reference scenario to the future scenario by cell. Higher values of *beta diversity* means higher changes, which can be by species replacement, *turnover*, or species gain/loss, *nestedness*. The *ratio* is calculated dividing the *turnover* by the *total beta diversity* thus values close to 1 indicates predominance of *turnover* component while values close to 0 indicates predominance of *nestedness* component.
 ```{r, fig.height = 5, fig.width = 5, fig.align = 'center',}
 # total beta diversity between scenarios
-spatialdv(ref, fut, "beta")
+beta.b <- spatialdv(ref, fut, "beta")
+terra::plot(beta.b, main = names(beta.b))
 
 # turnover component
-spatialdv(ref, fut, "turn")
+beta.t <- spatialdv(ref, fut, "turn")
+terra::plot(beta.t, main = names(beta.t))
 
 # nestedness component
-spatialdv(ref, fut, "nest")
+beta.n <- spatialdv(ref, fut, "nest")
+terra::plot(beta.n, main = names(beta.n))
 
 # ratio (turnover/total beta diversity)
-spatialdv(ref, fut, "ratio")
+beta.r <- spatialdv(ref, fut, "ratio")
+terra::plot(beta.r, main = names(beta.r))
 ```
 
 ## Calculating trait generalization
 It is a spatial representation of the *average* of a given trait.
 ```{r, fig.height = 5, fig.width = 5, fig.align = 'center',}
 # body mass ecological generalization
-spatialgn(ref, traits, "mass")
+r.mass <- spatialgn(ref, traits, "mass")
+terra::plot(r.mass, main = names(r.mass))
 
 # elevation ecological generalization
-spatialgn(ref, traits, "elev")
+r.elev <- spatialgn(ref, traits, "elev")
+terra::plot(r.elev, main = names(r.elev))
 ```
